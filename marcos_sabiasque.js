@@ -553,10 +553,13 @@
 // stage content:
     (lib.marcos_sabiasque = function () {
         this.initialize();
+        
+        console.log("AAA");
 
         // cuerpoMarcos
         this.instance = new lib.cuerpomarcos();
         this.instance.setTransform(178.6, 164.5);
+        //this.instance.setTransform(10, 50);
 
         this.addChild(this.instance);
     }).prototype = p = new cjs.Container();

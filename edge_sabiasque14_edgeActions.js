@@ -91,7 +91,9 @@
             var element = $("<canvas/>");
             element.css({
                 background: "black",
-                width: "100%",
+                width: "267px",
+                height: "248px",
+                //width: "100%",
                 //height: "100%",
                 overflow: "visible"
             });
@@ -112,7 +114,7 @@
                 console.log(canvas);
 
                 var loader = new createjs.LoadQueue(false);
-                loader.installPlugin(createjs.Sound);
+                //loader.installPlugin(createjs.Sound);
                 loader.addEventListener("fileload", handleFileLoad);
                 loader.addEventListener("complete", handleComplete);
                 loader.loadManifest(lib.properties.manifest);
@@ -133,7 +135,9 @@
                 stage.addChild(exportRoot);
                 stage.update();
                 
-                exportRoot.scaleX = exportRoot.scaleY = 1000;
+                //exportRoot.scaleY = 2;
+                
+                //exportRoot.scaleX = exportRoot.scaleY = 1000;
 
                 createjs.Ticker.setFPS(lib.properties.fps);
                 createjs.Ticker.addEventListener("tick", stage);
