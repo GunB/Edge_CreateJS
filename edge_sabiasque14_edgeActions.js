@@ -90,7 +90,7 @@
             //marcos.html('<canvas id="canvas" width="267" height="248" style="background-color:none"></canvas>');
             var element = $("<canvas/>");
             element.css({
-                background: "black",
+                //background: "black",
                 width: "267px",
                 height: "248px",
                 //width: "100%",
@@ -114,7 +114,7 @@
                 console.log(canvas);
 
                 var loader = new createjs.LoadQueue(false);
-                //loader.installPlugin(createjs.Sound);
+                loader.installPlugin(createjs.Sound);
                 loader.addEventListener("fileload", handleFileLoad);
                 loader.addEventListener("complete", handleComplete);
                 loader.loadManifest(lib.properties.manifest);
@@ -135,9 +135,8 @@
                 stage.addChild(exportRoot);
                 stage.update();
                 
-                //exportRoot.scaleY = 2;
-                
-                //exportRoot.scaleX = exportRoot.scaleY = 1000;
+                stage.canvas.height =  parseInt($(canvas).css("height"));
+                stage.canvas.width =  parseInt($(canvas).css("width"));
 
                 createjs.Ticker.setFPS(lib.properties.fps);
                 createjs.Ticker.addEventListener("tick", stage);
